@@ -1,0 +1,44 @@
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN LAYOUT */
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+}
+
+/* LAYOUTS */
+
+.site-header,
+.header-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-post-main {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* TYPOGRAPHY */
+
+.journal-name {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.75rem;
+}
+
+.header-right {
+    font-size: 0.35rem;
+    font-weight: 700;
+    gap: 0.5em;
+    text-transform: uppercase;
+}
