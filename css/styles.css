@@ -9,27 +9,158 @@ body {
 
 body {
     font-family: "Source Sans 3", sans-serif;
+    color: black;
+}
+
+/* GRID LAYOUT */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "head"
+        "main"
+        "foot";
+}
+
+.site-header {
+    grid-area: head;
+}
+
+.site-footer {
+    grid-area: foot;
+}
+
+main {
+    grid-area: main;
 }
 
 /* LAYOUTS */
 
-.site-header,
-.header-right {
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-decoration: none;
+    padding: 0.25em 0.5em;
+}
+
+.header-right {
+    display: flex;
+}
+
+.blog-main {
+    background-image: url("/images/laptop-screen-code.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    margin: 0 auto;
+    padding: 0.5em 0;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 .blog-post-main {
     text-decoration: none;
 }
 
-img {
-    width: 100%;
+.blog-main-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0.5em 0.75em;
+    text-shadow: 2px 5px 10px red;
+    width: 80%;
 }
 
+.blog-item {
+    padding: 0.5em 0;
+}
+
+article {
+    margin-top: 1em;
+}
+
+section {
+    margin: 2em;
+}
+
+.show-more-btn {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+    text-decoration: underline;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 auto 2em;
+    padding: 0.5em 1em;
+    display: block;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 1.5em 1em;
+}
 
 /* TYPOGRAPHY */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+h2 {
+    font-size: 1.25rem;
+    padding: 0.25em 0;
+    margin: 0;
+}
+
+h3 {
+    color: #505050;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.1;
+    padding: 0.25em 0;
+    margin: 0;
+}
+
+h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h4.footer-copyright {
+    font-weight: 300;
+}
+
+.blog-main h2,
+.blog-main h3,
+.blog-main p {
+    color: white;
+}
+
+.date {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+h2.header-home,
+h2.header-about-me {
+    font-size: 0.5rem;
+}
 
 .journal-name {
     font-family: "Roboto", sans-serif;
@@ -42,3 +173,4 @@ img {
     gap: 0.5em;
     text-transform: uppercase;
 }
+
