@@ -47,45 +47,6 @@ main {
     grid-area: blogs;
 }
 
-/* MEDIA QUERIES */
-
-@media (min-width: 768px) {
-    .blog-main-text {
-        width: 75%;
-    }
-    
-    .blog-main h2 {
-        font-size: 1.75em;
-    }
-
-    .blogs-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
-            "blog1" "blog2"
-            "blog3" "blog4"
-            "blog5" "blog6";
-    }
-}
-
-@media (min-width: 1024px) {
-    .blog-main-text {
-        width: 50%;
-    }
-
-    .blog-main h2 {
-        font-size: 2em;
-    }
-
-    .blogs-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: 
-            "blog1" "blog2" "blog3"
-            "blog4" "blog5" "blog6";
-    }
-}
-
 /* LAYOUTS */
 
 .site-header {
@@ -101,9 +62,6 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 5em;
-    list-style: none;
-    font-size: 0.65rem;
-    font-weight: 600;
     margin-left: auto;
     margin-right: 1.5em;
     text-transform: uppercase;
@@ -149,7 +107,7 @@ section {
     border-radius: 0px;
     font-size: 1rem;
     font-weight: 600;
-    margin: 0 auto;
+    margin: 0 auto 1em;
     padding: 0.5em 1em;
     display: block;
 }
@@ -223,11 +181,10 @@ h2.header-about-me {
     font-size: 0.75rem;
 }
 
-.header-right {
-    font-size: 0.35rem;
-    font-weight: 700;
-    gap: 0.5em;
-    text-transform: uppercase;
+.nav-links {
+    list-style: none;
+    font-size: 0.65rem;
+    font-weight: 600;
 }
 
 /* PSEUDO-CLASSES */
@@ -251,4 +208,59 @@ h2.header-about-me {
 .blog-item:hover,
 .blog-item:focus {
     opacity: 90%;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+    .journal-name {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        font-size: 0.75rem;
+    }
+    
+    .blog-main-text {
+        width: 75%;
+    }
+    
+    .blog-main h2 {
+        font-size: 1.75em;
+    }
+
+    .blogs-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "blog1" "blog2"
+            "blog3" "blog4"
+            "blog5" "blog6";
+    }
+}
+
+@media (min-width: 1024px) {
+    .journal-name {
+        font-size: 1.25rem;
+    }
+
+    .nav-links {
+        font-size: 1rem;
+    }
+    
+    .blog-main-text {
+        width: 50%;
+    }
+
+    .blog-main h2 {
+        font-size: 2em;
+    }
+
+    .blogs-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "blog1" "blog2" "blog3"
+            "blog4" "blog5" "blog6";
+    }
 }
