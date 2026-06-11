@@ -5,8 +5,6 @@ body {
     box-sizing: border-box;
 }
 
-/* MAIN LAYOUT */
-
 body {
     font-family: "Source Sans 3", sans-serif;
     color: black;
@@ -33,6 +31,59 @@ body {
 
 main {
     grid-area: main;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "blogmain"
+        "blogs";
+}
+
+.blog-main {
+    grid-area: blogmain;
+}
+
+.blog-container {
+    grid-area: blogs;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+    .blog-main-text {
+        width: 75%;
+    }
+    
+    .blog-main h2 {
+        font-size: 1.75em;
+    }
+
+    .blogs-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "blog1" "blog2"
+            "blog3" "blog4"
+            "blog5" "blog6";
+    }
+}
+
+@media (min-width: 1024px) {
+    .blog-main-text {
+        width: 50%;
+    }
+
+    .blog-main h2 {
+        font-size: 2em;
+    }
+
+    .blogs-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "blog1" "blog2" "blog3"
+            "blog4" "blog5" "blog6";
+    }
 }
 
 /* LAYOUTS */
@@ -45,15 +96,25 @@ main {
     padding: 0.25em 0.5em;
 }
 
-.header-right {
+.site-header ul { 
+    font-family: inherit;
     display: flex;
+    justify-content: space-between;
+    gap: 5em;
+    list-style: none;
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: 1.5em;
+    text-transform: uppercase;
 }
 
 .blog-main {
     background-image: url("/images/laptop-screen-code.jpg");
     background-size: cover;
+    background-position: bottom;
     width: 100%;
-    height: 40vh;
+    height: 300px;
     margin: 0 auto;
     padding: 0.5em 0;
     background-repeat: no-repeat;
@@ -70,11 +131,7 @@ main {
     justify-content: end;
     padding: 0.5em 0.75em;
     text-shadow: 2px 5px 10px red;
-    width: 80%;
-}
-
-.blog-item {
-    padding: 0.5em 0;
+    width: 90%;
 }
 
 article {
@@ -90,10 +147,9 @@ section {
     background: none;
     box-shadow: none;
     border-radius: 0px;
-    text-decoration: underline;
     font-size: 1rem;
     font-weight: 600;
-    margin: 0 auto 2em;
+    margin: 0 auto;
     padding: 0.5em 1em;
     display: block;
 }
@@ -174,3 +230,25 @@ h2.header-about-me {
     text-transform: uppercase;
 }
 
+/* PSEUDO-CLASSES */
+
+.site-header li:hover,
+.site-header li:focus,
+.blog-item:hover,
+.blog-item:focus,
+.show-more-btn:hover,
+.show-more-btn:focus {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.site-header li:hover,
+.site-header li:focus {
+    font-weight: 900;
+    text-shadow: lightblue 2px 2px 10px;
+}
+
+.blog-item:hover,
+.blog-item:focus {
+    opacity: 90%;
+}
